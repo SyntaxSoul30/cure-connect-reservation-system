@@ -8,7 +8,7 @@
 
 * **Frontend:** React.JS
 * **Backend:** Java 17, Spring Boot 3.x
-* **Database:** PostgreSQL 14+ (Schema: `wecureit`)
+* **Database:** PostgreSQL 14+
 * **Tunnelling:** **Ngrok** (For external API access and mobile testing)
 
 ---

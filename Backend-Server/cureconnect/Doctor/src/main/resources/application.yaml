@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: Doctor
+
+
+server:
+  port: 8080
+spring:
+  application:
+    name: Doctor
+
+  config:
+    import: optional:file:.env[.properties]
+
+  # PostgreSQL
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  # Default auto table generation
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: cureconnect
+
+  # Redis
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+
+springdoc:
+  group-configs:
+    - group: Doctor-API
+      paths-to-match: /api/v1/doctor/**
